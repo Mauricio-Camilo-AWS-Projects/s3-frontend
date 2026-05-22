@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compound Interest Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>💰 Compound Interest Simulator</h1>
+    <p class="subtitle">
+      Simulate your investments and save your future goals.
+    </p>
+
+    <div class="card">
+
+      <div class="form-grid">
+        <div class="input-group">
+          <label>Initial Amount ($)</label>
+          <input type="number" id="initialAmount" placeholder="1000">
+        </div>
+
+        <div class="input-group">
+          <label>Monthly Contribution ($)</label>
+          <input type="number" id="monthlyContribution" placeholder="500">
+        </div>
+
+        <div class="input-group">
+          <label>Interest Rate (% yearly)</label>
+          <input type="number" id="interestRate" placeholder="12">
+        </div>
+
+        <div class="input-group">
+          <label>Years</label>
+          <input type="number" id="years" placeholder="10">
+        </div>
+      </div>
+
+      <button onclick="calculateInterest()">
+        Calculate Investment
+      </button>
+
+      <div id="result-card" class="result-card hidden">
+        <h2>📈 Simulation Result</h2>
+
+        <div class="result-grid">
+          <div class="result-box">
+            <span>Total Invested</span>
+            <strong id="totalInvested">$0</strong>
+          </div>
+
+          <div class="result-box">
+            <span>Total Interest</span>
+            <strong id="totalInterest">$0</strong>
+          </div>
+
+          <div class="result-box highlight">
+            <span>Final Amount</span>
+            <strong id="finalAmount">$0</strong>
+          </div>
+        </div>
+
+        <div class="save-section">
+          <input
+            type="text"
+            id="simulationName"
+            placeholder="Example: Retirement Plan"
+          >
+
+          <button onclick="saveSimulation()" class="secondary">
+            Save Simulation
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="saved-card">
+      <h2>💾 Saved Simulations</h2>
+
+      <div id="savedSimulations" class="saved-list">
+        <p class="empty-message">
+          No simulations saved yet.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
