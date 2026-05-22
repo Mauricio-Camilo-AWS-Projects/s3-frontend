@@ -1,0 +1,17 @@
+{
+  "name": "s3-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "lint:js": "node --check script.js",
+    "lint:html": "htmlhint index.html",
+    "test": "npm run lint:js && npm run lint:html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "htmlhint": "^1.9.2"
+  }
+}

@@ -10,8 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Clona o repositório
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      # Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Instala dependências
+      - name: Install dependencies
+        run: npm install
+
+      # CI simples
+      - name: Validate frontend
+        run: npm run test
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
