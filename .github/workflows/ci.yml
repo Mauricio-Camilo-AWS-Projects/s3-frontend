@@ -1,4 +1,4 @@
-name: Frontend Deploy
+name: Call Frontend Pipeline
 
 on:
   push:
@@ -6,43 +6,9 @@ on:
       - main
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  ci-workflow:
+    uses: Minsait-Teste/CI-CD-Workflows/.github/workflows/frontend-ci.yml@main
 
-    steps:
-      # Clona o repositório
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # Node
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      # Instala dependências
-      - name: Install dependencies
-        run: npm install
-
-      # CI simples
-      - name: Validate frontend
-        run: npm run test
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-
-      - name: Upload files to S3
-        run: |
-          aws s3 sync . s3://aws-full-project-frontend \
-            --exclude ".git/*" \
-            --exclude ".github/*"
-
-      - name: Create CloudFront invalidation
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id E3E75WBZWAJEIM \
-            --paths "/*"
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
