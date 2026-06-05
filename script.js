@@ -1,5 +1,5 @@
 // Backend URL
-const API_BASE_URL = "https://mectech1.com/";
+const API_BASE_URL = "https://mectech1.com";
 
 let latestSimulation = null;
 let savedSimulations = [];
