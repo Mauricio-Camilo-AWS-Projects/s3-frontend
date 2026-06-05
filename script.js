@@ -1,5 +1,5 @@
 // Backend URL
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "http://54.162.141.128:3000";
 
 let latestSimulation = null;
 let savedSimulations = [];
