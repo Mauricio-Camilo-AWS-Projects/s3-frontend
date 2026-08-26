@@ -7,7 +7,7 @@ on:
 
 jobs:
   ci-workflow:
-    uses: Minsait-Teste/CI-CD-Workflows/.github/workflows/frontend-ci.yml@main
+    uses: Mauricio-Camilo-AWS-Projects/CI-CD-Workflows/.github/workflows/frontend-ci.yml@main
 
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
