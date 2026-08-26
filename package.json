@@ -4,8 +4,8 @@
   "description": "",
   "main": "./src/script.js",
   "scripts": {
-    "lint:js": "node --check script.js",
-    "lint:html": "htmlhint index.html",
+    "lint:js": "node --check src/script.js",
+    "lint:html": "htmlhint src/index.html",
     "test": "npm run lint:js && npm run lint:html"
   },
   "keywords": [],
