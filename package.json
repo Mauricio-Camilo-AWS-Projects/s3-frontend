@@ -2,7 +2,7 @@
   "name": "s3-frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "./src/script.js",
   "scripts": {
     "lint:js": "node --check script.js",
     "lint:html": "htmlhint index.html",
