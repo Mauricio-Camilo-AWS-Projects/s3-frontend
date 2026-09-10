@@ -1,7 +1,8 @@
 // Backend URL
 // const API_BASE_URL = "https://mectech1.com";
 const API_BASE_URL = "http://localhost:3000";
-// const API_BASE_URL = "http://aws-bootcamp-alb-1327830594.us-east-1.elb.amazonaws.com";
+// const API_BASE_URL = "http://aws-bootcamp-alb-2130395155.us-east-1.elb.amazonaws.com";
+
 
 let latestSimulation = null;
 let savedSimulations = [];
